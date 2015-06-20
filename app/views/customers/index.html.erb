@@ -6,6 +6,7 @@
         <tr>
           <th>姓</th>
           <th>名</th>
+          <th>会社名</th>
           <th>電子メール</th>
           <th>リンク</th>
         </tr>
@@ -15,6 +16,7 @@
         <tr>
           <td><%= customer.family_name %></td>
           <td><%= customer.given_name %></td>
+          <td><%= Company.find(customer.company_id).name %></td>
           <td><%= customer.email %></td>
           <td><%= link_to 'show', customer, class: "btn btn-default" %></td>
         </tr>
