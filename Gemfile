@@ -47,3 +47,7 @@ group :development, :test do
 end
 
 gem 'kaminari'
+
+group :development do
+  gem 'rails-erd'
+end
