@@ -48,6 +48,7 @@ end
 
 gem 'kaminari'
 gem 'ransack'
+gem 'devise'
 
 group :development do
   gem 'rails-erd'
