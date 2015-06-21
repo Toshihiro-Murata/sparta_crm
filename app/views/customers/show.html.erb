@@ -16,3 +16,16 @@
 -->
 
 </div>
+
+<hr>
+
+<div class="col-lg-12">
+<%= form_for @comment, url: { controller: :comments, action: :create } do |f| %>
+  <div class="form-group">
+    <%= f.label :body, '対応内容' %><br />
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <%= f.hidden_field :customer_id, value: @customer.id %>
+  <%= f.submit '投稿する', class: "btn btn-default" %>
+<% end %>
+</div>
