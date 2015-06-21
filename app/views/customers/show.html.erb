@@ -23,12 +23,17 @@
   <h2>対応履歴</h2>
   <% @customer.comments.each do |comment| %>
     <div class="media">
-
+      <div class="media-left">
+        <% if comment.user %>
+          <%= image_tag comment.user.image_url, class: "media-object", size: '50x50' %>
+        <% else %>
+          <%= image_tag "http://img4.wikia.nocookie.net/__cb20130205144914/glee-new-beginnings/images/f/fd/Unknown.gif", class: "media-object", size: '50x50' %>
+        <% end %>
+      </div>
       <div class="media-body">
         <p><%= simple_format(comment.body) %></p>
         <p class="text-muted">
-          by
-          <% if comment.user %>
+          by <% if comment.user %>
           <%= comment.user.family_name %><%= comment.user.given_name %>
           <% else %>
             不明
