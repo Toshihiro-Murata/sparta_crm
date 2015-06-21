@@ -57,7 +57,6 @@
     <%= f.text_area :body, class: "form-control" %>
   </div>
   <%= f.hidden_field :customer_id, value: @customer.id %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit '投稿する', class: "btn btn-default" %>
 <% end %>
 </div>
