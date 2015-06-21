@@ -34,6 +34,7 @@ class CustomersController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = Comment.where(customer_id: params[:id].to_i)
   end
 
   def destroy
