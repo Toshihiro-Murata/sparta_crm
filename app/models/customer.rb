@@ -10,6 +10,7 @@ class Customer < ActiveRecord::Base
     presence: true
 
   belongs_to :company
+  has_many :comments
 
   def full_name
     full_name = family_name + given_name
