@@ -23,10 +23,17 @@
   <h2>対応履歴</h2>
   <% @customer.comments.each do |comment| %>
     <div class="media">
+
       <div class="media-body">
         <p><%= simple_format(comment.body) %></p>
         <p class="text-muted">
-          by <%= comment.user.family_name %><%= comment.user.given_name %><br />
+          by
+          <% if comment.user %>
+          <%= comment.user.family_name %><%= comment.user.given_name %>
+          <% else %>
+            不明
+          <% end %>
+          <br />
           <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
           <%= link_to "削除する", comment_path(comment), method: :delete %>
         </p>
