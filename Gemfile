@@ -52,5 +52,7 @@ gem 'devise'
 
 group :development do
   gem 'rails-erd'
+  gem 'annotate'
+  gem 'better_errors'
 end
 
